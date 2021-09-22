@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action={{ url_for("resultados") }}>
+    <br>
+
+    <div class="mb-3">
+        <label for="user_input" class="form-label">Ingresa las direcciones a buscar separadas por comas: </label>
+        <textarea class="form-control" id="user_input" rows="3" name="user_input"></textarea>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-outline-secondary mb-3">Enviar</button>
+    </div>
+    <input type="hidden" name="busqueda" value="individual">
+    </form>
+{% endblock %}

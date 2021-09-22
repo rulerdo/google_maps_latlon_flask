@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <h3>Resultados:</h3>
+        <table class="table table-striped">
+            {% for line in results_list %}
+            {% if line[0] == "Valor buscado" %}
+            <thead>
+                <tr>
+                    <th>{{ line[0] }}</th>
+                    <th>{{ line[1] }}</th>
+                    <th>{{ line[2] }}</th>
+                    <th>{{ line[3] }}</th>
+                </tr>
+            </thead> 
+            {% else %}
+            <tbody>
+                <tr>
+                    <td>{{ line[0] }}</td>
+                    <td>{{ line[1] }}</td>
+                    <td>{{ line[2] }}</td>
+                    <td>{{ line[3] }}</td>
+                </tr>
+            {% endif %}
+            {% endfor %}
+        </table>
+{% endblock %}
